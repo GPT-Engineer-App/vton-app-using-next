@@ -30,11 +30,12 @@ const Index = () => {
     }
 
     setLoading(true);
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("cloth", cloth);
 
     try {
+      const formData = new FormData();
+      formData.append("image", image);
+      formData.append("cloth", cloth);
+
       const response = await fetch("https://huggingface.co/spaces/yisol/IDM-VTON/api/predict", {
         method: "POST",
         body: formData,
@@ -42,6 +43,8 @@ const Index = () => {
 
       const data = await response.json();
       setResult(data.output);
+
+      setResult(result.data[0]);
     } catch (error) {
       toast({
         title: "Error",
