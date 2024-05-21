@@ -43,10 +43,17 @@ const Index = () => {
 
       const data = await response.json();
       setResult(data.output);
+      toast({
+        title: "Success",
+        description: "API call successful.",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
     } catch (error) {
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: `Something went wrong. Please try again. Error: ${error.message}`,
         status: "error",
         duration: 3000,
         isClosable: true,
