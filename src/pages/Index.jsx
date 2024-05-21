@@ -43,8 +43,6 @@ const Index = () => {
 
       const data = await response.json();
       setResult(data.output);
-
-      setResult(result.data[0]);
     } catch (error) {
       toast({
         title: "Error",
