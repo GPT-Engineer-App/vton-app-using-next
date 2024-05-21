@@ -9,8 +9,11 @@ function Navigation() {
         <Button as={Link} to="/" variant="link" color="white" mr="4">
           Home
         </Button>
-        <Button as={Link} to="/tryon" variant="link" color="white">
+        <Button as={Link} to="/tryon" variant="link" color="white" mr="4">
           Try On
+        </Button>
+        <Button as={Link} to="/workflow" variant="link" color="white">
+          Workflow
         </Button>
       </Box>
     </Flex>
